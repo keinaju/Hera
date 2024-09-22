@@ -1,0 +1,17 @@
+.loader {
+    animation: l13 0.75s infinite linear;
+    aspect-ratio: 1;
+    background:
+            radial-gradient(farthest-side, #888 94%, #0000) top/25px 25px no-repeat,
+            conic-gradient(#0000 30%, #888);
+    border-radius: 50%;
+    margin: auto;
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 25px), #000 0);
+    width: 100px;
+}
+
+@keyframes l13 {
+    100% {
+        transform: rotate(1turn)
+    }
+}

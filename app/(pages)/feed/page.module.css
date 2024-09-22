@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.marginLeft {
+    margin-left: 10px;
+}
+
+.parameters {
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.topHalf {
+    border-left: 1px solid var(--border);
+    height: auto;
+    padding: 10px 10px;
+}

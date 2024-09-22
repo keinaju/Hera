@@ -1,0 +1,32 @@
+.header {
+    background-color: var(--foreground);
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    margin-bottom: 5px;
+}
+
+.left {
+    text-align: left;
+}
+
+.link {
+    color: var(--background);
+}
+
+.nav {
+    text-align: right;
+}
+
+.logo {
+    border-radius: 10000px;
+}
+
+.title {
+    color: var(--background);
+    text-align: center;
+}
+
+.user {
+    color: var(--background);
+    margin-right: 10px;
+}

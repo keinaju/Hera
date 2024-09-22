@@ -1,0 +1,8 @@
+.navigation {
+    background-color: var(--background);
+    border-radius: 0px;
+    border: 2px solid var(--foreground);
+    font-size: 1em;
+    padding: 0px 10px 0px;
+    transition: all 0.2s;
+}

@@ -1,0 +1,6 @@
+.container {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin: auto;
+    max-width: 1200px;
+}

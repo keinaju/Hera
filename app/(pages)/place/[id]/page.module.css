@@ -1,0 +1,8 @@
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.placeInformation {
+    margin: auto 20px;
+}

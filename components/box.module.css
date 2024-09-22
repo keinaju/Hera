@@ -1,0 +1,6 @@
+.box {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    padding: 20px 20px 20px;
+    margin: 10px 10px 10px;
+}
