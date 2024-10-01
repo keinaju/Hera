@@ -1,5 +1,5 @@
 .post {
-    animation: fade 2.0s ease-out;
+    animation: fade 2s ease-out;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     margin-top: 10px;

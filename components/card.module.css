@@ -3,6 +3,7 @@
 }
 
 .flipCard {
+    animation: fade 2s ease-out;
     background-color: transparent;
     perspective: 5000px;
 }
@@ -33,4 +34,14 @@
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
