@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 
 async function findPlaces({ blacklist, latitude, longitude }) {
     // Convert strings to Mongoose ObjectIds
-    blacklist = blacklist.map(id => new mongoose.Types.ObjectId(id));
+    blacklist = blacklist.map((id) => new mongoose.Types.ObjectId(id));
 
     await dbConnect();
     const places = await Place.aggregate([
@@ -16,21 +16,25 @@ async function findPlaces({ blacklist, latitude, longitude }) {
                 distanceField: 'distance',
                 near: [longitude || 0, latitude || 0],
                 query: { _id: { $nin: blacklist } },
-            }
-        }
+            },
+        },
+        {
+            // Limit results to 3 documents
+            $limit: 3,
+        },
     ]).exec();
 
     for (const place of places) {
         // Find 0 to 3 random products
         const products = await Product.aggregate([
-                { $match: { place: place._id } },
-                { $sample: { size: 3 }, }
-            ]).exec();
-        
-        place.mealPictures = products.map(product => product.picture);
+            { $match: { place: place._id } },
+            { $sample: { size: 3 } },
+        ]).exec();
+
+        place.mealPictures = products.map((product) => product.picture);
     }
-    
-    const output = places.map(place => ({
+
+    const output = places.map((place) => ({
         id: place._id.toString(),
         name: place.name,
         streetAddress: place.streetAddress,
@@ -38,7 +42,7 @@ async function findPlaces({ blacklist, latitude, longitude }) {
         phoneNumber: place.phoneNumber,
         city: place.city,
         country: place.country,
-        placePicture: place.picture,    
+        placePicture: place.picture,
         mealPictures: place.mealPictures,
         distance: place.distance,
         points: Math.ceil(Math.random() * 500),
